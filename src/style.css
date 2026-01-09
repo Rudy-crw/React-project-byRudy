@@ -91,7 +91,12 @@ a {
   content: attr(data-en-title);
   /* 定位設定 */
   position: absolute;
-  transform: translate(-17%, 0%);
+  left: 50%; /* 1. 先把左側推到父元素的正中間 */
+  top: 50%; /* 2. 高度也推到中間 */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* 3. 把自己往回拉 50% (水平和垂直都回拉)，達成完美置中 */
   /* 文字樣式設定 */
   font-size: 40px; /* 字要超大！ (你可以依設計稿調整) */
   font-family: sans-serif; /* 英文通常用無襯線體 */
