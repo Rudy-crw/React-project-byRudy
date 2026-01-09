@@ -1,0 +1,149 @@
+:root {
+  --primary-yellow: #fec631;
+}
+a {
+  text-decoration: none;
+}
+
+/* 讓 Hero 區塊變成黃色 */
+.heroSection {
+  background-color: var(--primary-yellow);
+}
+.heroTitle {
+  font-size: 28px;
+  font-weight: bold;
+  color: #262626;
+}
+.heroTitle::after {
+  content: "";
+  position: absolute;
+  background-image: url("/image/Frame\ 87783.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 84px;
+  height: 112px;
+  top: 24px;
+  right: 43px;
+}
+.heroSlogan {
+  font-size: 16px;
+  font-weight: 400;
+  color: #262626;
+}
+.heroSlogan::after {
+  content: "";
+  position: absolute;
+  background-image: url("/image/minnie-zhou-0hiUWSi7jvs-unsplash\ 1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 132px;
+  top: 108px;
+  right: 0px;
+  z-index: 5;
+}
+
+.searchArea {
+  background-color: #ffffff;
+  border-radius: 16px;
+}
+.search-item {
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid #fec631;
+  padding-bottom: 6px;
+  margin-bottom: px;
+}
+.search-item:last-of-type {
+  border: none;
+}
+.form-select {
+  border: none;
+  font-weight: bold;
+}
+.form-select label {
+  font-size: 14px;
+}
+.search-btn {
+  background-color: var(--primary-yellow);
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  border: none;
+  font-weight: bold;
+  color: #0a0a0a;
+  height: 53px;
+}
+/* -- 以上為Hero區塊 -- */
+
+/* -- 稀寵資訊專區 -- */
+
+/* 1. 設定標題本體 (父元素) */
+.section-title {
+  position: relative; /* 關鍵：讓偽元素以此為定位基準 */
+  /* display: inline-block; 讓寬度貼合文字，比較好置中 */
+  z-index: 1; /* 確保中文在最上層 */
+  font-weight: bold;
+  color: #333;
+  font-size: 24px;
+}
+/* 2. 設定背後的英文浮水印 (偽元素) */
+.section-title::before {
+  /* 🔥 魔法：去抓 HTML 裡面的 data-en-title 屬性值 */
+  content: attr(data-en-title);
+  /* 定位設定 */
+  position: absolute;
+  transform: translate(-17%, 0%);
+  /* 文字樣式設定 */
+  font-size: 40px; /* 字要超大！ (你可以依設計稿調整) */
+  font-family: sans-serif; /* 英文通常用無襯線體 */
+  color: #85bdde;
+  opacity: 0.2; /* 關鍵：透明度！讓它淡淡的 */
+  white-space: nowrap; /* 強制不換行 */
+  z-index: -1; /* 關鍵：放到中文的後面 (圖層 -1) */
+}
+.section-title.primary-yellow::before {
+  color: #fec631;
+}
+
+.infoContent {
+  background-color: #c9e9f4;
+}
+.infoContentCard {
+  background-color: #fff;
+  border-radius: 16px;
+  position: relative;
+  padding: 24px;
+}
+.infoContentCard::after {
+  /* 1. 內容：*/
+  content: "";
+  /* 2. 定位：固定在卡片右上角 */
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  /* 3. 外觀：*/
+  background-color: #ffffff;
+  color: #c9e9f4;
+  background-image: url("/image/Frame\ 87685.png");
+  /* 4. 大小 */
+  width: 24px;
+  height: 17px;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 25px;
+}
+.card-text {
+  color: #525252;
+  margin-bottom: 8px;
+}
+.moreInfoBtn {
+  background-color: #ffffff;
+  font-weight: bold;
+  padding: 15px;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
