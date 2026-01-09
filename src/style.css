@@ -71,6 +71,25 @@ a {
   font-weight: bold;
   color: #0a0a0a;
   height: 53px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* --- Feather Icons 通用設定 --- */
+.feather {
+  width: 24px; /* 預設寬度 */
+  height: 24px; /* 預設高度 */
+  stroke: currentColor; /* 讓圖示顏色跟著文字顏色變 */
+  stroke-width: 3; /* 線條粗細 (Feather 特色是細線，你可以改 2.5 或 3 變粗) */
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none; /* 預設不要填滿顏色 (除非你要做實心) */
+  vertical-align: text-bottom; /* 讓圖示跟文字對齊好看一點 */
+}
+/* 針對搜尋按鈕裡的 icon 微調 */
+.search-btn .feather {
+  width: 18px; /* 按鈕裡的可以小一點 */
+  height: 18px;
 }
 /* -- 以上為Hero區塊 -- */
 
