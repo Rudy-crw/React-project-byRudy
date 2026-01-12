@@ -14,72 +14,83 @@
   </head>
   <body>
     <!-- padding、margin 的 space 要再改，先暫時以相近的代替 -->
-    <header class="heroSection px-3 py-5 mb-4">
-      <div class="pb-5">
-        <h1 class="heroTitle mx-3">稀寵搜搜，<br />搜出你的稀有空間</h1>
-        <p class="mx-3 heroSlogan">診所、旅館、賣家 一鍵查找</p>
-      </div>
-      <div class="searchArea px-3 row g-2">
-        <div class="search-item col-12">
-          <div class="form-floating">
-            <select
-              class="form-select"
-              id="searchArea"
-              aria-label="Floating label select example"
+    <header class="heroSection px-3 py-5 mb-4 container">
+      <div class="row-md">
+        <div class="col-md-6">
+          <div class="pb-5">
+            <h1 class="heroTitle mx-3">
+              稀寵搜搜，<br class="d-md-none" />搜出你的稀有空間
+            </h1>
+            <p class="mx-3 heroSlogan">診所、旅館、賣家 一鍵查找</p>
+          </div>
+          <div
+            class="searchArea px-3 px-md-2 row g-2 d-md-flex justify-content-center align-items-center"
+          >
+            <div class="search-item col-12 col-md-3">
+              <div class="form-floating">
+                <select
+                  class="form-select"
+                  id="searchArea"
+                  aria-label="Floating label select example"
+                >
+                  <option value="台北">台北</option>
+                  <option value="新北">新北</option>
+                  <option value="桃園">桃園</option>
+                  <option value="新竹">新竹</option>
+                  <option value="台中">台中</option>
+                  <option value="彰化">彰化</option>
+                  <option value="嘉義">嘉義</option>
+                  <option value="台南">台南</option>
+                  <option value="高雄">高雄</option>
+                  <option value="屏東">屏東</option>
+                </select>
+                <label for="searchArea">地區</label>
+              </div>
+            </div>
+            <div class="search-item col-12 col-md-3">
+              <div class="form-floating">
+                <select
+                  class="form-select"
+                  id="searchPetCategory"
+                  aria-label="Floating label select example"
+                >
+                  <option value="1">刺蝟</option>
+                  <option value="2">守宮</option>
+                  <option value="3">倉鼠</option>
+                  <option value="4">鸚鵡</option>
+                  <option value="5">烏龜</option>
+                  <option value="6">柯爾鴨</option>
+                </select>
+                <label for="searchPetCategory">寵物類別</label>
+              </div>
+            </div>
+            <div class="search-item col-12 col-md-3">
+              <div class="form-floating">
+                <select
+                  class="form-select"
+                  id="storeType"
+                  aria-label="Floating label select example"
+                >
+                  <option value="1">診所</option>
+                  <option value="2">旅館</option>
+                  <option value="3">賣家</option>
+                </select>
+                <label for="storeType">店家種類</label>
+              </div>
+            </div>
+            <button
+              class="col-12 col-md-3 search-btn mb-2 m-md-0"
+              type="button"
             >
-              <option value="台北">台北</option>
-              <option value="新北">新北</option>
-              <option value="桃園">桃園</option>
-              <option value="新竹">新竹</option>
-              <option value="台中">台中</option>
-              <option value="彰化">彰化</option>
-              <option value="嘉義">嘉義</option>
-              <option value="台南">台南</option>
-              <option value="高雄">高雄</option>
-              <option value="屏東">屏東</option>
-            </select>
-            <label for="searchArea">地區</label>
+              立即搜搜<i data-feather="search" class="ms-2"></i>
+            </button>
           </div>
         </div>
-        <div class="search-item col-12">
-          <div class="form-floating">
-            <select
-              class="form-select"
-              id="searchPetCategory"
-              aria-label="Floating label select example"
-            >
-              <option value="1">刺蝟</option>
-              <option value="2">守宮</option>
-              <option value="3">倉鼠</option>
-              <option value="4">鸚鵡</option>
-              <option value="5">烏龜</option>
-              <option value="6">柯爾鴨</option>
-            </select>
-            <label for="searchPetCategory">寵物類別</label>
-          </div>
-        </div>
-        <div class="search-item col-12">
-          <div class="form-floating">
-            <select
-              class="form-select"
-              id="storeType"
-              aria-label="Floating label select example"
-            >
-              <option value="1">診所</option>
-              <option value="2">旅館</option>
-              <option value="3">賣家</option>
-            </select>
-            <label for="storeType">店家種類</label>
-          </div>
-        </div>
-        <button class="col-12 search-btn mb-2" type="button">
-          立即搜搜<i data-feather="search" class="ms-2"></i>
-        </button>
       </div>
     </header>
 
     <!-- 稀寵資訊專區 -->
-    <div class="infoSection">
+    <div class="infoSection container">
       <h2 class="section-title text-center pb-4" data-en-title="Information">
         稀寵資訊專區
       </h2>
@@ -104,7 +115,7 @@
     </div>
 
     <!-- 熱門店家 -->
-    <div class="hotSpot">
+    <div class="hotSpot container">
       <h2
         class="section-title text-center pb-4 primary-yellow"
         data-en-title="Hot Spot"

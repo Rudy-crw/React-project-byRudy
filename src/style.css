@@ -16,9 +16,11 @@ a {
   color: #262626;
 }
 .heroTitle::after {
+  /* 行動版箭頭 */
   content: "";
   position: absolute;
   background-image: url("/image/Frame\ 87783.png");
+
   background-size: contain;
   background-repeat: no-repeat;
   width: 84px;
@@ -32,6 +34,7 @@ a {
   color: #262626;
 }
 .heroSlogan::after {
+  /* 行動版大圖 */
   content: "";
   position: absolute;
   background-image: url("/image/minnie-zhou-0hiUWSi7jvs-unsplash\ 1.png");
@@ -43,7 +46,6 @@ a {
   right: 0px;
   z-index: 5;
 }
-
 .searchArea {
   background-color: #ffffff;
   border-radius: 16px;
@@ -91,6 +93,42 @@ a {
 .search-btn .feather {
   width: 18px; /* 按鈕裡的可以小一點 */
   height: 18px;
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+  .heroTitle {
+    padding-top: 96px;
+    font-size: 48px;
+  }
+  .heroSlogan {
+    font-size: 20px;
+  }
+  .searchArea {
+    border-radius: 24px;
+    max-width: 656px;
+  }
+  .search-item {
+    border: 0;
+    padding: 0;
+    margin-bottom: 8px;
+  }
+  .search-btn {
+    border-radius: 0;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+  }
+  .heroTitle::after {
+    background-image: url("/public/image/Frame\ 87781.png");
+    width: 45vw;
+    max-width: 728px;
+    height: 164px;
+    top: 64px;
+    right: 0;
+    left: 700px;
+  }
 }
 /* -- 以上為Hero區塊 -- */
 
