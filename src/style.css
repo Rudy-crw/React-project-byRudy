@@ -1,5 +1,6 @@
 :root {
   --primary-yellow: #fec631;
+  --primary-orange: #f59004;
 }
 a {
   text-decoration: none;
@@ -124,9 +125,6 @@ a {
   white-space: nowrap; /* 強制不換行 */
   z-index: -1; /* 關鍵：放到中文的後面 (圖層 -1) */
 }
-.section-title.primary-yellow::before {
-  color: #fec631;
-}
 
 .infoContent {
   background-color: #c9e9f4;
@@ -169,4 +167,69 @@ a {
   width: 200px;
   margin-left: auto;
   margin-right: auto;
+}
+/* -- 以上為稀寵資訊專區 -- */
+
+/* -- 熱門店家 -- */
+/* 使用 class section-title 的顏色 */
+.section-title.primary-yellow::before {
+  color: #fec631;
+}
+
+.hotSpot .store-img {
+  width: 132px; /* 圖片通常可以比線條 icon 大一點，看你需求調整 */
+  height: auto; /* 高度自動，維持比例 */
+  object-fit: contain; /* 確保圖片完整顯示不變形 */
+}
+
+/* --- 熱門店家區塊 Swiper 設定 --- */
+.swiper {
+  background-color: var(--primary-yellow); /* 整個背景是黃的 */
+}
+/* 1. 卡片預設樣式 (針對旁邊沒選中的卡片) */
+.store-card {
+  /* 關鍵：背景透明，透出底下的黃色，看起來就像黃色遮罩 */
+  background-color: transparent;
+  background-color: #ffffff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  /* 稍微透明一點，讓文字不跟背景打架 */
+  opacity: 0.2;
+  /* 動畫過渡效果 */
+  transition: all 0.3s ease;
+}
+.fav-icon {
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+}
+.store-content {
+  height: 104px;
+}
+.store-name {
+  font-weight: bold;
+  color: #262626;
+}
+.store-add {
+  font-size: 14px;
+  color: #777777;
+  margin: 0;
+}
+/* 3. 🔥 Active 狀態：當卡片被選中時 (變回實心) */
+.swiper-slide-active .store-card {
+  background-color: #fff; /* 變成純白背景 */
+  opacity: 1; /* 完全不透明 */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* 加上浮起來的陰影 */
+}
+.swiper-slide-active .fav-icon {
+  fill: currentColor;
+  color: var(--primary-orange);
+}
+.swiper-slide-active span {
+  color: var(--primary-orange);
+}
+
+/* 4. 分頁點點顏色修正 */
+.swiper-pagination-bullet-active {
+  background-color: #333 !important;
 }
