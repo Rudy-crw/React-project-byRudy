@@ -164,6 +164,45 @@ a {
   z-index: -1; /* 關鍵：放到中文的後面 (圖層 -1) */
 }
 
+@media (min-width: 768px) {
+  .section-title-outside {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+  }
+  .infoSection {
+    background-color: #c9e9f4;
+    border-radius: 40px;
+  }
+  .section-title {
+    font-size: 48px;
+    margin-bottom: 40px;
+  }
+  .section-title::before {
+    font-size: 128px;
+    transform: translate(-50%, -30%);
+  }
+  .infoContent {
+    /* 這是中間卡片的區域 */
+    /* position: relative; */
+    max-width: 1296px;
+    margin: 0 auto;
+  }
+  /* .infoContent::before {
+    content: "";
+    background-color: #ffffff;
+    position: absolute;
+    width: 440px;
+    height: 136px;
+    border-top-right-radius: 40px;
+    border-top-left-radius: 40px;
+    z-index: 1;
+    top: -35%;
+    left: 0;
+  } */
+}
 .infoContent {
   background-color: #c9e9f4;
 }
