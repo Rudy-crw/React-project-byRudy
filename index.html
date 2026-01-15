@@ -13,68 +13,79 @@
     />
   </head>
   <body>
-    <!-- padding margin 的 space 要再改，先暫時以相近的代替 -->
-    <header class="heroSection px-3 py-5 mb-4">
-      <div class="pb-5">
-        <h1 class="heroTitle mx-3">稀寵搜搜，<br />搜出你的稀有空間</h1>
-        <p class="mx-3 heroSlogan">診所、旅館、賣家 一鍵查找</p>
-      </div>
-      <div class="searchArea px-3 row g-2">
-        <div class="search-item col-12">
-          <div class="form-floating">
-            <select
-              class="form-select"
-              id="searchArea"
-              aria-label="Floating label select example"
+    <!-- padding、margin 的 space 要再改，先暫時以相近的代替 -->
+    <header class="heroSection px-3 py-5 mb-4 container">
+      <div class="row-md">
+        <div class="col-md-6">
+          <div class="pb-5">
+            <h1 class="heroTitle mx-3">
+              稀寵搜搜，<br class="d-md-none" />搜出你的稀有空間
+            </h1>
+            <p class="mx-3 heroSlogan">診所、旅館、賣家 一鍵查找</p>
+          </div>
+          <div
+            class="searchArea px-3 px-md-2 row g-2 d-md-flex justify-content-center align-items-center"
+          >
+            <div class="search-item col-12 col-md-3">
+              <div class="form-floating">
+                <select
+                  class="form-select"
+                  id="searchArea"
+                  aria-label="Floating label select example"
+                >
+                  <option value="台北">台北</option>
+                  <option value="新北">新北</option>
+                  <option value="桃園">桃園</option>
+                  <option value="新竹">新竹</option>
+                  <option value="台中">台中</option>
+                  <option value="彰化">彰化</option>
+                  <option value="嘉義">嘉義</option>
+                  <option value="台南">台南</option>
+                  <option value="高雄">高雄</option>
+                  <option value="屏東">屏東</option>
+                </select>
+                <label for="searchArea">地區</label>
+              </div>
+            </div>
+            <div class="search-item col-12 col-md-3">
+              <div class="form-floating">
+                <select
+                  class="form-select"
+                  id="searchPetCategory"
+                  aria-label="Floating label select example"
+                >
+                  <option value="1">刺蝟</option>
+                  <option value="2">守宮</option>
+                  <option value="3">倉鼠</option>
+                  <option value="4">鸚鵡</option>
+                  <option value="5">烏龜</option>
+                  <option value="6">柯爾鴨</option>
+                </select>
+                <label for="searchPetCategory">寵物類別</label>
+              </div>
+            </div>
+            <div class="search-item col-12 col-md-3">
+              <div class="form-floating">
+                <select
+                  class="form-select"
+                  id="storeType"
+                  aria-label="Floating label select example"
+                >
+                  <option value="1">診所</option>
+                  <option value="2">旅館</option>
+                  <option value="3">賣家</option>
+                </select>
+                <label for="storeType">店家種類</label>
+              </div>
+            </div>
+            <button
+              class="col-12 col-md-3 search-btn mb-2 m-md-0"
+              type="button"
             >
-              <option value="台北">台北</option>
-              <option value="新北">新北</option>
-              <option value="桃園">桃園</option>
-              <option value="新竹">新竹</option>
-              <option value="台中">台中</option>
-              <option value="彰化">彰化</option>
-              <option value="嘉義">嘉義</option>
-              <option value="台南">台南</option>
-              <option value="高雄">高雄</option>
-              <option value="屏東">屏東</option>
-            </select>
-            <label for="searchArea">地區</label>
+              立即搜搜<i data-feather="search" class="ms-2"></i>
+            </button>
           </div>
         </div>
-        <div class="search-item col-12">
-          <div class="form-floating">
-            <select
-              class="form-select"
-              id="searchPetCategory"
-              aria-label="Floating label select example"
-            >
-              <option value="1">刺蝟</option>
-              <option value="2">守宮</option>
-              <option value="3">倉鼠</option>
-              <option value="4">鸚鵡</option>
-              <option value="5">烏龜</option>
-              <option value="6">柯爾鴨</option>
-            </select>
-            <label for="searchPetCategory">寵物類別</label>
-          </div>
-        </div>
-        <div class="search-item col-12">
-          <div class="form-floating">
-            <select
-              class="form-select"
-              id="storeType"
-              aria-label="Floating label select example"
-            >
-              <option value="1">診所</option>
-              <option value="2">旅館</option>
-              <option value="3">賣家</option>
-            </select>
-            <label for="storeType">店家種類</label>
-          </div>
-        </div>
-        <button class="col-12 search-btn mb-2" type="button">
-          立即搜搜<i data-feather="search" class="ms-2"></i>
-        </button>
       </div>
     </header>
 
@@ -114,13 +125,115 @@
     </div>
 
     <!-- 熱門店家 -->
-    <div class="hotSpot">
+    <div class="hotSpot container">
       <h2
         class="section-title text-center pb-4 primary-yellow"
         data-en-title="Hot Spot"
       >
         熱門店家
       </h2>
+      <div class="swiper mySwiper py-4">
+        <div class="swiper-wrapper pb-3">
+          <div class="swiper-slide">
+            <div class="store-card text-center px-3 pt-3 pb-4">
+              <div
+                class="d-flex justify-content-end align-items-center mb-3 pe-3"
+              >
+                <i data-feather="heart" class="fav-icon me-1"></i>
+                <span class="small fw-bold">153</span>
+              </div>
+              <div
+                class="icon-box mb-3 mx-auto d-flex align-items-center justify-content-center"
+              >
+                <img class="store-img" src="/image/hotel.png" alt="店家圖片" />
+              </div>
+              <div class="store-content">
+                <p class="store-name mb-2">就甘心Ponpon寵物旅館</p>
+                <p class="store-add">台北市中山區新生北路二段60巷16號4樓</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="store-card text-center px-3 pt-3 pb-4">
+              <div
+                class="d-flex justify-content-end align-items-center mb-3 pe-3"
+              >
+                <i data-feather="heart" class="fav-icon me-1"></i>
+                <span class="small fw-bold">87</span>
+              </div>
+              <div
+                class="icon-box mb-3 mx-auto d-flex align-items-center justify-content-center"
+              >
+                <img class="store-img" src="/image/clinic.png" alt="店家圖片" />
+              </div>
+              <div class="store-content">
+                <p class="store-name mb-2">凡賽爾賽鴿​動物​醫院</p>
+                <p class="store-add">台​中市​西屯區​重慶​路​8號​</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="store-card text-center px-3 pt-3 pb-4">
+              <div
+                class="d-flex justify-content-end align-items-center mb-3 pe-3"
+              >
+                <i data-feather="heart" class="fav-icon me-1"></i>
+                <span class="small fw-bold">93</span>
+              </div>
+              <div
+                class="icon-box mb-3 mx-auto d-flex align-items-center justify-content-center"
+              >
+                <img class="store-img" src="/image/Shop.png" alt="店家圖片" />
+              </div>
+              <div class="store-content">
+                <p class="store-name mb-2">水手​兩棲爬​蟲.特寵​-南港​店</p>
+                <p class="store-add">
+                  台北市​南港​區南​港​路​二​段​20巷5號​B1​
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="store-card text-center px-3 pt-3 pb-4">
+              <div
+                class="d-flex justify-content-end align-items-center mb-3 pe-3"
+              >
+                <i data-feather="heart" class="fav-icon me-1"></i>
+                <span class="small fw-bold">115</span>
+              </div>
+              <div
+                class="icon-box mb-3 mx-auto d-flex align-items-center justify-content-center"
+              >
+                <img class="store-img" src="/image/clinic.png" alt="店家圖片" />
+              </div>
+              <div class="store-content">
+                <p class="store-name mb-2">星羽​動物​醫院​-​三​民院</p>
+                <p class="store-add">高雄市​三​民區信國​路​20號​</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="store-card text-center px-3 pt-3 pb-4">
+              <div
+                class="d-flex justify-content-end align-items-center mb-3 pe-3"
+              >
+                <i data-feather="heart" class="fav-icon me-1"></i>
+                <span class="small fw-bold">75</span>
+              </div>
+              <div
+                class="icon-box mb-3 mx-auto d-flex align-items-center justify-content-center"
+              >
+                <img class="store-img" src="/image/hotel.png" alt="店家圖片" />
+              </div>
+              <div class="store-content">
+                <p class="store-name mb-2">熊讚​寵物​精緻​旅館</p>
+                <p class="store-add">新​北市​板橋區館​前​西路​120號2樓​</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="swiper-pagination"></div> -->
+      </div>
     </div>
     <script type="module" src="./src/main.js"></script>
   </body>

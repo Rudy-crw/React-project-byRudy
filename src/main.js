@@ -1,15 +1,59 @@
 // main.js
 
-// 1. 引入 Bootstrap 的 CSS (樣式)
-// 注意：這一行一定要在 style.css 之前，這樣你的樣式才能覆蓋它
+// 1. 引入 Bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
-// 2. 引入 Bootstrap 的 JS (互動功能，如下拉選單)
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-// 人工補充 feather icon
+
+// 2. 引入 Swiper 核心與模組
+import Swiper from "swiper";
+import { Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+
+// 3. 引入 Feather Icons
 import feather from "feather-icons";
 
-// 3. 引入你自己的 CSS (客製化樣式)
-
+// 4. 引入 CSS
 import "./style.css";
 
+// 5. 初始化 Swiper
+const swiper = new Swiper(".mySwiper", {
+  modules: [Pagination, Autoplay],
+
+  // 🔥 手機版核心設定
+  centeredSlides: true, // 讓 active 的那張置中
+  slidesPerView: 2, // 畫面一次顯示 1.2 張 (兩邊露出一點點)
+  spaceBetween: 24, // 卡片間距
+
+  loop: true, // 無限循環
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+
+  // RWD 設定：平板/電腦版
+  breakpoints: {
+    768: {
+      slidesPerView: 3, // 電腦版一次看 3 張
+      spaceBetween: 30,
+    },
+  },
+
+  // 🔥 關鍵：Swiper 初始化或切換時，要重新畫 Icon
+  // 這樣 Swiper 複製出來的 Slide 才有圖示
+  on: {
+    init: function () {
+      feather.replace();
+    },
+    slideChange: function () {
+      feather.replace();
+    },
+  },
+});
+
+// 6. 補底：針對頁面其他非 Swiper 的部分 (如 header) 再執行一次
 feather.replace();
