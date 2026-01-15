@@ -9,39 +9,42 @@ a {
 /* 讓 Hero 區塊變成黃色 */
 .heroSection {
   background-color: var(--primary-yellow);
+  position: relative;
 }
 .heroTitle {
   font-size: 28px;
   font-weight: bold;
   color: #262626;
 }
-.heroTitle::after {
+.hero-img-sign {
+  position: relative;
+}
+.hero-img-sign::after {
   /* 行動版箭頭 */
   content: "";
   position: absolute;
   background-image: url("/image/Frame\ 87783.png");
-
   background-size: contain;
   background-repeat: no-repeat;
   width: 84px;
   height: 112px;
-  top: 24px;
-  right: 43px;
+  top: -24px;
+  right: 27px;
 }
 .heroSlogan {
   font-size: 16px;
   font-weight: 400;
   color: #262626;
 }
-.heroSlogan::after {
-  /* 行動版大圖 */
+.heroSection::after {
+  /* 行動版六寶大圖 */
   content: "";
   position: absolute;
   background-image: url("/image/minnie-zhou-0hiUWSi7jvs-unsplash\ 1.png");
   background-size: contain;
   background-repeat: no-repeat;
   width: 200px;
-  height: 132px;
+  aspect-ratio: 1024/682;
   top: 108px;
   right: 0px;
   z-index: 5;
@@ -94,21 +97,33 @@ a {
   width: 18px; /* 按鈕裡的可以小一點 */
   height: 18px;
 }
+/* ---- 桌機板hero ---- */
 @media (min-width: 768px) {
-  .container {
+  .heroSection {
+    overflow: hidden;
+    width: auto;
     max-width: 1920px;
-    margin: 0 auto;
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 40px;
   }
+
   .heroTitle {
     padding-top: 96px;
     font-size: 48px;
+    position: relative;
+    z-index: 3;
   }
   .heroSlogan {
     font-size: 20px;
+    position: relative;
+    z-index: 3;
   }
   .searchArea {
     border-radius: 24px;
     max-width: 656px;
+    position: relative;
+    z-index: 3;
   }
   .search-item {
     border: 0;
@@ -120,14 +135,54 @@ a {
     border-top-right-radius: 16px;
     border-bottom-right-radius: 16px;
   }
-  .heroTitle::after {
+
+  .hero-img-sign {
+    max-width: 1296px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 143px;
+  }
+
+  .hero-img-sign::after {
+    /* --桌機板右上方虛線箭頭-- */
+    /* border: 1px solid red; */
     background-image: url("/public/image/Frame\ 87781.png");
-    width: 45vw;
+    background-size: cover;
+    position: absolute;
+    display: block;
+    aspect-ratio: 728 / 164;
+    width: 80%;
     max-width: 728px;
     height: 164px;
-    top: 64px;
-    right: 0;
-    left: 700px;
+    top: 16px;
+    right: -150px;
+  }
+  .heroSection::before {
+    /* --桌機板左下方虛線箭頭-- */
+    /* border: 1px solid red; */
+    content: "";
+    background-image: url("../public/image/Frame\ 87780.png");
+    background-size: cover;
+    position: absolute;
+    width: 640px;
+    height: 204px;
+    bottom: 58px;
+    left: 118px;
+    /* display: block;
+    aspect-ratio: 728 / 164;
+    width: 80%;
+    top: 16px;
+    right: -150px; */
+  }
+  .heroSection::after {
+    /* 桌機版六寶大圖 */
+    width: 880px;
+    aspect-ratio: 1024/682;
+    top: auto;
+    bottom: -40px;
+    right: 0px;
+    left: auto;
+    z-index: 2;
   }
 }
 /* -- 以上為Hero區塊 -- */
@@ -309,4 +364,20 @@ a {
 /* 4. 分頁點點顏色修正 */
 .swiper-pagination-bullet-active {
   background-color: #333 !important;
+}
+
+/* -- header,footer 範例 定位用 -- */
+.example-footer {
+  height: 312px;
+}
+.example-header {
+  height: 72px;
+}
+@media (min-width: 768px) {
+  .example-footer {
+    height: 224px;
+  }
+  .example-header {
+    height: 156px;
+  }
 }
