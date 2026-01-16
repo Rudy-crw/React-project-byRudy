@@ -44,11 +44,13 @@ const swiper = new Swiper(".mySwiper", {
   breakpoints: {
     768: {
       centeredSlides: false, // 關閉置中！讓卡片從左邊整齊開始排
+      slidesPerView: 3, // 電腦版一次看 3 張
+      spaceBetween: 20,
+    },
+    1400: {
+      centeredSlides: false, // 關閉置中！讓卡片從左邊整齊開始排
       slidesPerView: 4, // 電腦版一次看 3 張
       spaceBetween: 24,
-      autoplay: {
-        delay: 300000,
-      },
     },
   },
 

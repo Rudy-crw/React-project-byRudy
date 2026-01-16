@@ -456,10 +456,10 @@ a {
   /* 3. 定位調整：把按鈕拉到卡片外側 */
   /* 根據你的容器寬度，用負數把它拉出去 */
   .hotSpot .swiper-button-prev {
-    left: 230px;
+    left: 10px;
   }
   .hotSpot .swiper-button-next {
-    right: 230px;
+    right: 10px;
   }
   /* 4. (選用) Hover 效果：滑鼠移上去變色 */
   .hotSpot .swiper-button-prev:hover,
@@ -471,6 +471,20 @@ a {
   .hotSpot .swiper-button-next i {
     width: 24px;
     height: 24px;
+  }
+}
+@media (min-width: 1600px) {
+  .hotSpot .swiper-button-prev,
+  .hotSpot .swiper-button-next {
+    top: 55%;
+  }
+  .hotSpot .swiper-button-prev {
+    /* left: 230px; */
+    left: calc(50% - 648px - 80px);
+  }
+  .hotSpot .swiper-button-next {
+    /* right: 230px; */
+    right: calc(50% - 648px - 80px);
   }
 }
 
