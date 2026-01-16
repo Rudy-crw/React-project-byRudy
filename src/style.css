@@ -226,10 +226,41 @@ a {
     background-color: #ffffff;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
+    position: relative;
   }
+  /* -- 背景削成圓角 -- */
+  .section-title-outside::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-top-right-radius: 30px;
+    top: 0px;
+    left: -50px;
+    box-shadow: 12px -5px 0 0 #ffffff;
+    /* border: 1px solid red; */
+    z-index: 1;
+  }
+  .section-title-outside::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-top-left-radius: 30px;
+    top: 0px;
+    right: -50px;
+    box-shadow: -12px -5px 0 0 #ffffff;
+    /* border: 1px solid red; */
+    z-index: 1;
+  }
+
   .infoSection {
     background-color: #c9e9f4;
     border-radius: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
   }
   .section-title {
     font-size: 48px;
@@ -329,6 +360,7 @@ a {
   opacity: 0.2;
   /* 動畫過渡效果 */
   transition: all 0.3s ease;
+  padding: 16px 12px 24px 12px;
 }
 .fav-icon {
   width: 16px;
@@ -360,10 +392,86 @@ a {
 .swiper-slide-active span {
   color: var(--primary-orange);
 }
-
 /* 4. 分頁點點顏色修正 */
 .swiper-pagination-bullet-active {
   background-color: #333 !important;
+}
+@media (min-width: 768px) {
+  .hotSpot {
+    background-color: var(--primary-yellow);
+    border-radius: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+    position: relative;
+  }
+  .hotSpot-content {
+    max-width: 1296px;
+    margin: 0 auto;
+  }
+  .store-card {
+    opacity: 1;
+    padding-bottom: 48px;
+    padding-top: 36px;
+    border-radius: 16px;
+  }
+  .fav-icon {
+    fill: currentColor;
+    color: var(--primary-orange);
+  }
+  .store-card span {
+    color: var(--primary-orange);
+  }
+  .hotSpot .store-img {
+    width: 274px; /* 圖片通常可以比線條 icon 大一點，看你需求調整 */
+  }
+  .store-name {
+    font-size: 20px;
+  }
+  .store-add {
+    font-size: 16px;
+  }
+
+  .hotSpot .swiper-button-prev,
+  .hotSpot .swiper-button-next {
+    /* -- 形狀與大小 -- */
+    position: absolute;
+    width: 56px; /* 設定固定寬度 */
+    height: 56px; /* 設定固定高度 */
+    border-radius: 50%; /* 變成正圓形 */
+    background-color: #ffffff; /* 白色背景 */
+    /* -- 讓裡面的 Feather Icon 置中 -- */
+    align-items: center;
+    justify-content: center;
+    /* -- 視覺美化 -- */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 加一點陰影讓它浮起來 */
+    color: #333333; /* 箭頭顏色 (深灰/黑) */
+    z-index: 10; /* 確保浮在最上層 */
+    /* -- 移除預設的邊框與背景透明 -- */
+    margin: 0;
+    border: none;
+    /* -- 垂直置中 (Swiper 預設已經有 top: 50%，若沒有則加上) -- */
+    top: 55%;
+    /* transform: translateY(-50%); */
+  }
+  /* 3. 定位調整：把按鈕拉到卡片外側 */
+  /* 根據你的容器寬度，用負數把它拉出去 */
+  .hotSpot .swiper-button-prev {
+    left: 230px;
+  }
+  .hotSpot .swiper-button-next {
+    right: 230px;
+  }
+  /* 4. (選用) Hover 效果：滑鼠移上去變色 */
+  .hotSpot .swiper-button-prev:hover,
+  .hotSpot .swiper-button-next:hover {
+    border: 2px solid var(--primary-yellow);
+    cursor: pointer;
+  }
+  .hotSpot .swiper-button-prev i,
+  .hotSpot .swiper-button-next i {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 /* -- header,footer 範例 定位用 -- */
