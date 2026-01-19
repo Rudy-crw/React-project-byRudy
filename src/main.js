@@ -15,7 +15,7 @@ import feather from "feather-icons";
 
 // 4. 引入 CSS
 import "./style.css";
-import "./test.css";
+import "./store-detail.css";
 
 // 5. 初始化 Swiper
 const swiper = new Swiper(".mySwiper", {
