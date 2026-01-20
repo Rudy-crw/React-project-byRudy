@@ -22,12 +22,14 @@ ul {
 .store-profile-box {
   background-color: var(--primary-yellow);
   padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   border-radius: inherit;
 }
 .store-detail-img {
-  width: 335px;
+  width: 100%;
   height: 240px;
-  margin-bottom: 8px;
   border-radius: inherit;
   background-color: #ffffff;
 }
@@ -40,7 +42,6 @@ ul {
   object-position: center;
   border-radius: inherit;
 }
-
 .store-link {
   padding: 36px 77.5px 36px 77.5px;
   background-color: #ffffff;
@@ -51,6 +52,8 @@ ul {
   font-weight: bold;
   color: #0a0a0a;
   font-size: 16px;
+  width: 100%;
+  display: block;
 }
 .store-link-icon {
   color: var(--primary-yellow);
@@ -63,6 +66,32 @@ ul {
   opacity: 0.3; /* 關鍵：透明度，讓它變淡 */
   z-index: 0; /* 放在最底層 */
 }
+@media (min-width: 768px) {
+  .store-info-section {
+    max-width: 1296px;
+    align-items: flex-start;
+    border-radius: 16px;
+    flex-wrap: nowrap;
+  }
+  .store-profile-box {
+    max-width: 307px;
+    padding: 16px;
+    width: auto;
+    height: auto;
+    gap: 16px;
+  }
+  .store-detail-img {
+    height: 275px;
+  }
+  .store-link {
+    padding: 0;
+    text-align: center;
+  }
+  .store-link a {
+    padding: 36px 0;
+  }
+}
+/* 店家公開資訊 */
 .store-info-box {
   background-color: var(--Primary-blue-500);
   padding: 8px;
@@ -79,11 +108,23 @@ ul {
   color: #262626;
   margin-bottom: 16px;
 }
-/* ------- */
+@media (min-width: 768px) {
+  .store-info-box {
+    padding: 16px;
+  }
+  .store-info-content {
+    padding: 48px;
+  }
+  .store-info-content ul {
+    padding: 0 0 0 16px;
+  }
+}
+/* ----店家地址電話--- */
 .store-contact-box {
   background-color: #f0f0f0;
   border-radius: inherit;
   padding: 8px;
+  gap: 8px;
 }
 .store-add {
   padding: 16px;
@@ -116,7 +157,6 @@ ul {
   background-color: #ffffff;
   border-radius: inherit;
 }
-
 .tel-icon {
   width: 48px;
   height: 48px;
@@ -147,4 +187,56 @@ ul {
   color: #525252;
   text-align: center;
   font-size: 14px;
+}
+@media (min-width: 768px) {
+  .store-contact-box {
+    padding: 24px;
+    gap: 24px;
+  }
+  .store-add {
+    padding: 16px 24px 16px 24px;
+  }
+  .store-tel {
+    padding: 16px 24px 16px 24px;
+  }
+  .info-disclaimer {
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+}
+/* --- 相關評價 --- */
+.reviewsContent {
+  background-color: #f0f0f0;
+}
+.section-title.black-400::before {
+  color: #a3a3a3;
+}
+.reviewsContentCard {
+  background-color: #fff;
+  border-radius: 16px;
+  position: relative;
+  padding: 24px;
+}
+.userIcon {
+  color: #2f6382;
+  border-radius: 80px;
+  background-color: #f0f0f0;
+  padding: 8px;
+  height: 40px;
+  width: 40px;
+}
+.card-text.black600 {
+  color: #525252;
+}
+.moreInfoBtn.black-400 {
+  background-color: #a3a3a3;
+  color: #ffffff;
+}
+@media (min-width: 768px) {
+  .infoSection.black-100 {
+    background-color: #f0f0f0;
+  }
+  .reviewsContentCard {
+    height: 200px;
+  }
 }

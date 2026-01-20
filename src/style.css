@@ -299,17 +299,13 @@ a {
   padding: 24px;
 }
 .infoContentCard::after {
-  /* 1. 內容：*/
   content: "";
-  /* 2. 定位：固定在卡片右上角 */
   position: absolute;
   top: 25px;
   right: 25px;
-  /* 3. 外觀：*/
   background-color: #ffffff;
   color: #c9e9f4;
   background-image: url("/image/Frame\ 87685.png");
-  /* 4. 大小 */
   width: 24px;
   height: 17px;
 }
