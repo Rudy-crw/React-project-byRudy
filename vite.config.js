@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import { resolve } from "path"; // 1. 引入 path 模組來處理路徑
 
 export default defineConfig({
   // 👇 這裡填入 '/你的 GitHub 儲存庫名稱/' (前後都要有斜線)
