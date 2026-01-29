@@ -81,6 +81,9 @@ a {
   align-items: center;
   justify-content: center;
 }
+.search-btn .feather {
+  stroke-width: 2;
+}
 /* --- Feather Icons 通用設定 --- */
 .feather {
   width: 24px; /* 預設寬度 */
@@ -92,11 +95,7 @@ a {
   fill: none; /* 預設不要填滿顏色 (除非你要做實心) */
   vertical-align: text-bottom; /* 讓圖示跟文字對齊好看一點 */
 }
-/* 針對搜尋按鈕裡的 icon 微調 */
-.search-btn .feather {
-  width: 18px; /* 按鈕裡的可以小一點 */
-  height: 18px;
-}
+
 /* ---- 桌機板hero ---- */
 @media (min-width: 768px) {
   .heroSection {
@@ -463,10 +462,12 @@ a {
     border: 2px solid var(--primary-yellow);
     cursor: pointer;
   }
-  .hotSpot .swiper-button-prev i,
-  .hotSpot .swiper-button-next i {
-    width: 24px;
-    height: 24px;
+  .hotSpot .swiper-button-prev .feather,
+  .hotSpot .swiper-button-next .feather {
+    fill: none;
+    width: 36px;
+    height: 36px;
+    stroke-width: 1.5;
   }
 }
 @media (min-width: 1600px) {
@@ -497,5 +498,65 @@ a {
   }
   .example-header {
     height: 156px;
+  }
+}
+
+/* ----------SearchBar 修正------------- */
+
+/* 手機版預設：一般圓角 */
+.search-pill {
+  border-radius: 16px;
+}
+
+.btn-search {
+  /* 手機版按鈕全寬圓角 */
+  border-radius: 12px;
+}
+
+/* 移除 Bootstrap Dropdown 預設箭頭 */
+.dropdown-toggle-custom::after {
+  display: none;
+}
+
+.dropdown-toggle-custom:focus,
+.btn:focus {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.dropdown-item:hover,
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: #c9e9f4 !important;
+  color: #000 !important;
+  font-weight: bold;
+  border-radius: 40px; /* 下拉選項內的圓角 */
+}
+
+/* ---- 桌機板校準 (min-width: 768px) ---- */
+@media (min-width: 768px) {
+  .search-pill {
+    /* 嚴格執行設計稿 40px 圓角 */
+    border-radius: 40px !important;
+    max-width: 800px; /* 增加一點寬度容納內容 */
+  }
+
+  .border-md-end {
+    border-right: 1px solid #dee2e6 !important;
+  }
+
+  .border-md-bottom-0 {
+    border-bottom: 0 !important;
+  }
+
+  .btn-search {
+    /* 桌機版按鈕右側配合大膠囊 */
+    border-radius: 0 40px 40px 0 !important;
+    height: 100%;
+    margin-right: -8px; /* 抵消 p-2 產生的間距，讓按鈕貼齊邊緣 */
+  }
+
+  .dropdown-menu {
+    min-width: 200px;
   }
 }
