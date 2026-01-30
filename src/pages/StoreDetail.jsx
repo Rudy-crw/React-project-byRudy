@@ -41,7 +41,7 @@ const StoreDetail = () => {
           </div>
 
           <div className="col-md-4 store-contact-box d-flex flex-column">
-            <div className="store-add d-flex align-items-center gap-4">
+            <div className="store-detail-add d-flex align-items-center gap-4">
               <div className="add-icon">
                 <i data-feather="map-pin"></i>
               </div>

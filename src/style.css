@@ -356,6 +356,7 @@ a {
   /* 動畫過渡效果 */
   transition: all 0.3s ease;
   padding: 16px 12px 24px 12px;
+  max-height: 261px;
 }
 .fav-icon {
   width: 16px;
@@ -363,7 +364,7 @@ a {
   font-size: 16px;
 }
 .store-content {
-  height: 104px;
+  min-height: 104px;
 }
 .store-name {
   font-weight: bold;
