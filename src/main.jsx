@@ -13,6 +13,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation"; // 記得補上 navigation 的 css
 import "./style.css";
+import "./store-detail.css";
 // import "./store-detail.css"; // 建議這個之後搬去 StoreDetail 元件裡 import
 
 ReactDOM.createRoot(document.getElementById("root")).render(

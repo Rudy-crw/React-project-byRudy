@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react"; // 引入 Swiper React 元�
 import { Pagination, Autoplay, Navigation } from "swiper/modules"; // 引入模組
 import { Heart, ArrowLeft, ArrowRight, Search } from "react-feather";
 // 這裡不需要 import swiper css 了，因為剛剛 main.jsx 有引過，或者你在這裡引也可以
+import SearchBar from "../components/SearchBar";
 
 const HomPage = () => {
   return (
@@ -18,68 +19,7 @@ const HomPage = () => {
             </h1>
             <p className="mx-3 mx-md-0 heroSlogan">診所、旅館、賣家 一鍵查找</p>
           </div>
-          <div className="searchArea px-3 px-md-2 row g-2 d-md-flex justify-content-center align-items-center">
-            <div className="search-item col-12 col-md-3">
-              <div className="form-floating">
-                <select
-                  className="form-select"
-                  id="searchArea"
-                  aria-label="Floating label select example"
-                >
-                  <option value="台北">台北</option>
-                  <option value="新北">新北</option>
-                  <option value="桃園">桃園</option>
-                  <option value="新竹">新竹</option>
-                  <option value="台中">台中</option>
-                  <option value="彰化">彰化</option>
-                  <option value="嘉義">嘉義</option>
-                  <option value="台南">台南</option>
-                  <option value="高雄">高雄</option>
-                  <option value="屏東">屏東</option>
-                </select>
-                <label htmlFor="searchArea">地區</label>
-              </div>
-            </div>
-            <div className="search-item col-12 col-md-3">
-              <div className="form-floating">
-                <select
-                  className="form-select"
-                  id="searchPetCategory"
-                  aria-label="Floating label select example"
-                >
-                  <option value="1">刺蝟</option>
-                  <option value="2">守宮</option>
-                  <option value="3">倉鼠</option>
-                  <option value="4">鸚鵡</option>
-                  <option value="5">烏龜</option>
-                  <option value="6">柯爾鴨</option>
-                </select>
-                <label htmlFor="searchPetCategory">寵物類別</label>
-              </div>
-            </div>
-            <div className="search-item col-12 col-md-3">
-              <div className="form-floating">
-                <select
-                  className="form-select"
-                  id="storeType"
-                  aria-label="Floating label select example"
-                >
-                  <option value="1">診所</option>
-                  <option value="2">旅館</option>
-                  <option value="3">賣家</option>
-                </select>
-                <label htmlFor="storeType">店家種類</label>
-              </div>
-            </div>
-            <button
-              className="col-12 col-md-3 search-btn mb-2 m-md-0"
-              type="button"
-            >
-              立即搜搜
-              <Search className="feather ms-2" />
-              {/* <i data-feather="search" className="ms-2"></i> */}
-            </button>
-          </div>
+          <SearchBar />
         </div>
       </header>
 
